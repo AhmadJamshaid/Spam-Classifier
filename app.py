@@ -7,10 +7,11 @@ from nltk.stem.porter import PorterStemmer
 
 try:
     nltk.data.find('corpora/stopwords')
-    nltk.data.find('tokenizers/punkt')
+    nltk.data.find('tokenizers/punkt_tab')
 except LookupError:
     nltk.download('stopwords')
     nltk.download('punkt')
+    nltk.download('punkt_tab')  # <-- Added this critical fallback download line
 
 ps = PorterStemmer()
 
